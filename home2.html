@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Firm - Advanced Analytics Platform</title>
+    <meta name="description"
+        content="Market Research Firm - Advanced market research platform with real-time analytics, comprehensive reports, and AI-powered insights for enterprise decision-making.">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/icon-only.svg">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="premium-header">
+        <div class="header-container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo">
+                            <img src="assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
+                            <span class="logo-text">
+                                <strong>Market Research</strong>
+                                <span>Firm</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <nav class="main-navigation">
+                    <div class="nav-container">
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="home2.html" class="nav-link active">Home 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="company.html" class="nav-link">Company</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="solutions.html" class="nav-link">Solutions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reports.html" class="nav-link">Reports</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="plans.html" class="nav-link">Plans</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dashboard/" class="nav-link">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="auth-section">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+
+                <div class="mobile-menu-toggle">
+                    <button class="hamburger" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="mobile-logo">
+                        <img src="assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
+                        <span class="mobile-logo-text">
+                            <strong>Market Research</strong>
+                            <span>Firm</span>
+                        </span>
+                    </div>
+                    <button class="mobile-menu-close" id="mobileMenuClose">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <nav class="mobile-navigation">
+                    <ul class="mobile-nav-menu">
+                        <li class="mobile-nav-item">
+                            <a href="index.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="home2.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span>Home 2</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="company.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏢</span>
+                                <span>Company</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="solutions.html" class="mobile-nav-link">
+                                <span class="nav-icon">💡</span>
+                                <span>Solutions</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="reports.html" class="mobile-nav-link">
+                                <span class="nav-icon">📊</span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="plans.html" class="mobile-nav-link">
+                                <span class="nav-icon">💎</span>
+                                <span>Plans</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="contact.html" class="mobile-nav-link">
+                                <span class="nav-icon">📞</span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="dashboard/" class="mobile-nav-link">
+                                <span class="nav-icon">📊</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mobile-auth-section">
+                        <a href="login.html" class="btn btn-outline mobile-btn">Login</a>
+                        <a href="signup.html" class="btn btn-primary mobile-btn">Sign Up</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg hero-bg-gradient-1"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-fade-in">Advanced Analytics Platform</h1>
+                    <p class="hero-subtitle animate-fade-in">Experience the future of market research with AI-powered
+                        insights, real-time data visualization, and predictive analytics that drive strategic decisions.
+                    </p>
+                    <div class="flex gap-6 animate-fade-in">
+                        <a href="dashboard/" class="btn btn-primary btn-large">Launch Dashboard</a>
+                        <a href="plans.html" class="btn btn-outline btn-large">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Platform Features -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="animate-fade-in text-white">Next-Generation Analytics</h2>
+                    <p class="animate-fade-in text-white text-xl">Revolutionary features that transform how you analyze
+                        market data and make informed decisions.</p>
+                </div>
+                <div class="grid grid-3 gap-8">
+                    <div class="feature-card animate-slide-in-left">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI-Powered Insights</h3>
+                        <p class="feature-description">Leverage artificial intelligence to uncover hidden patterns and
+                            predict market trends with unprecedented accuracy.</p>
+                        <a href="solutions.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="feature-card animate-fade-in">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Real-Time Analytics</h3>
+                        <p class="feature-description">Monitor market changes as they happen with our live data
+                            streaming and instant notification system.</p>
+                        <a href="dashboard/" class="btn btn-primary">Try Now</a>
+                    </div>
+                    <div class="feature-card animate-slide-in-right">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Predictive Modeling</h3>
+                        <p class="feature-description">Advanced forecasting models that help you anticipate market
+                            movements and identify opportunities before competitors.</p>
+                        <a href="reports.html" class="btn btn-primary">View Models</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Data Visualization -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Interactive Data Visualization</h2>
+                    <p class="animate-fade-in text-xl text-muted mx-auto max-w-3xl">Transform complex data into
+                        actionable insights with our
+                        advanced visualization tools and interactive dashboards.</p>
+                </div>
+                <div class="grid grid-2 gap-16 items-center">
+                    <div class="animate-slide-in-left">
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6">
+                                <div
+                                    class="feature-icon bg-primary/10 text-primary w-12 h-12 flex items-center justify-center rounded-lg">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="feature-title text-xl font-bold mb-2">Dynamic Charts</h4>
+                                    <p class="feature-description text-muted">Interactive charts that update in
+                                        real-time with live
+                                        market data feeds and granular controls.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div
+                                    class="feature-icon bg-primary/10 text-primary w-12 h-12 flex items-center justify-center rounded-lg">
+                                    <i class="fas fa-th-large"></i>
+                                </div>
+                                <div>
+                                    <h4 class="feature-title text-xl font-bold mb-2">Custom Dashboards</h4>
+                                    <p class="feature-description text-muted">Build personalized dashboards tailored to
+                                        your
+                                        specific industry, KPIs, and unique reporting needs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div
+                                    class="feature-icon bg-primary/10 text-primary w-12 h-12 flex items-center justify-center rounded-lg">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="feature-title text-xl font-bold mb-2">Mobile Analytics</h4>
+                                    <p class="feature-description text-muted">Access critical insights on-the-go with
+                                        our
+                                        fully responsive and secure mobile application.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-slide-in-right">
+                        <div class="card p-4 bg-white shadow-2xl border-0 rounded-2xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bbbda5366fd9?auto=format&fit=crop&w=1000&q=80"
+                                alt="Modern Data Visualization Dashboard" class="rounded-xl w-full">
+                            <div class="p-4 text-center">
+                                <h4 class="text-lg font-bold">Advanced Analytics Suite</h4>
+                                <p class="text-sm text-muted">Real-time market tracking & predictive modeling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="dashboard/" class="btn btn-primary btn-large inline-flex items-center gap-2">
+                        Start Visualizing <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Industry Solutions -->
+        <section class="section section-accent">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="animate-fade-in text-white">Industry-Specific Solutions</h2>
+                    <p class="animate-fade-in text-white text-xl">Tailored analytics platforms designed for your
+                        specific industry challenges and opportunities.</p>
+                </div>
+                <div class="grid grid-4 gap-8">
+                    <div class="feature-card animate-fade-in bg-white/10 backdrop-blur-md border-white/20 h-full">
+                        <div class="feature-icon bg-white/20"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3 class="feature-title text-white">Financial Services</h3>
+                        <p class="feature-description text-white/90">Risk analysis, fraud detection, and market
+                            intelligence</p>
+                    </div>
+                    <div class="feature-card animate-fade-in bg-white/10 backdrop-blur-md border-white/20 h-full">
+                        <div class="feature-icon bg-white/20"><i class="fas fa-notes-medical"></i></div>
+                        <h3 class="feature-title text-white">Healthcare Analytics</h3>
+                        <p class="feature-description text-white/90">Patient outcomes, drug development, and market
+                            trends</p>
+                    </div>
+                    <div class="feature-card animate-fade-in bg-white/10 backdrop-blur-md border-white/20 h-full">
+                        <div class="feature-icon bg-white/20"><i class="fas fa-shopping-basket"></i></div>
+                        <h3 class="feature-title text-white">Retail Intelligence</h3>
+                        <p class="feature-description text-white/90">Consumer behavior, inventory optimization, and
+                            sales forecasting</p>
+                    </div>
+                    <div class="feature-card animate-fade-in bg-white/10 backdrop-blur-md border-white/20 h-full">
+                        <div class="feature-icon bg-white/20"><i class="fas fa-microchip"></i></div>
+                        <h3 class="feature-title text-white">Manufacturing</h3>
+                        <p class="feature-description text-white/90">Supply chain, quality control, and production
+                            analytics</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="solutions.html"
+                        class="btn btn-outline btn-large bg-white/20 border-white text-white hover:bg-white hover:text-accent">View
+                        All Industries</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Technology Stack -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="animate-fade-in">Cutting-Edge Technology</h2>
+                    <p class="animate-fade-in text-xl text-muted">Built on the latest technologies to deliver unmatched
+                        performance and reliability.</p>
+                </div>
+                <div class="grid grid-3 gap-8">
+                    <div class="card animate-fade-in">
+                        <div class="text-center">
+                            <div class="feature-icon">🔧</div>
+                            <h3 class="feature-title">Machine Learning</h3>
+                            <p class="feature-description">Advanced ML algorithms for pattern recognition and predictive
+                                analytics.</p>
+                        </div>
+                    </div>
+                    <div class="card animate-fade-in">
+                        <div class="text-center">
+                            <div class="feature-icon">🌐</div>
+                            <h3 class="feature-title">Cloud Infrastructure</h3>
+                            <p class="feature-description">Scalable cloud architecture ensuring 99.9% uptime and global
+                                accessibility.</p>
+                        </div>
+                    </div>
+                    <div class="card animate-fade-in">
+                        <div class="text-center">
+                            <div class="feature-icon">🔒</div>
+                            <h3 class="feature-title">Enterprise Security</h3>
+                            <p class="feature-description">Bank-level encryption and compliance with global data
+                                protection standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Call to Action -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="animate-fade-in text-white">Transform Your Analytics Today</h2>
+                    <p class="animate-fade-in text-white text-xl mb-12">Join thousands of enterprises leveraging
+                        advanced analytics to gain competitive advantage.</p>
+                    <div class="flex gap-6 justify-center animate-fade-in">
+                        <a href="signup.html" class="btn btn-primary btn-large">Start Free Trial</a>
+                        <a href="contact.html"
+                            class="btn btn-outline btn-large bg-white/10 border-white text-white hover:bg-white hover:text-primary">Request
+                            Demo</a>
+                    </div>
+                    <div class="mt-10">
+                        <p class="text-white/80 text-lg">14-day free trial • No credit card required • Full feature
+                            access</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-light.svg" alt="Market Research Firm" class="logo">
+                    </div>
+                    <p class="footer-description">
+                        Market Research Firm - Leading provider of premium market intelligence and data analytics for
+                        enterprise decision-making.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 008.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 001-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                        <li><a href="plans.html">Plans</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Market Analysis</a></li>
+                        <li><a href="#">Consumer Insights</a></li>
+                        <li><a href="#">Competitive Intelligence</a></li>
+                        <li><a href="#">Custom Reports</a></li>
+                        <li><a href="#">Analytics Dashboard</a></li>
+                        <li><a href="#">API Access</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>123 Business Ave, Suite 100<br>New York, NY 10001</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5v2z" />
+                            </svg>
+                            <span>info@marketresearchfirm.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Market Research Firm. All rights reserved.</p>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+</body>
+
+</html>

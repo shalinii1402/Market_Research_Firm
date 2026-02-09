@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Firm - Solutions | Market Research Services</title>
+    <meta name="description"
+        content="Market Research Firm - Comprehensive market research solutions including market analysis, consumer insights, competitive intelligence, custom reports, dashboards, and API access.">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/icon-only.svg">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="premium-header">
+        <div class="header-container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo">
+                            <img src="assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
+                            <span class="logo-text">
+                                <strong>Market Research</strong>
+                                <span>Firm</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <nav class="main-navigation">
+                    <div class="nav-container">
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="home2.html" class="nav-link">Home 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="company.html" class="nav-link">Company</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="solutions.html" class="nav-link active">Solutions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reports.html" class="nav-link">Reports</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="plans.html" class="nav-link">Plans</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dashboard/" class="nav-link">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="auth-section">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+
+                <div class="mobile-menu-toggle">
+                    <button class="hamburger" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <img src="assets/images/logo/logo-dark.png" alt="Market Research Firm" class="mobile-logo">
+                    <button class="mobile-menu-close" id="mobileMenuClose">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <nav class="mobile-navigation">
+                    <ul class="mobile-nav-menu">
+                        <li class="mobile-nav-item">
+                            <a href="index.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="home2.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span>Home 2</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="company.html" class="mobile-nav-link">
+                                <span class="nav-icon">🏢</span>
+                                <span>Company</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="solutions.html" class="mobile-nav-link">
+                                <span class="nav-icon">💡</span>
+                                <span>Solutions</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="reports.html" class="mobile-nav-link">
+                                <span class="nav-icon">📊</span>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="plans.html" class="mobile-nav-link">
+                                <span class="nav-icon">💎</span>
+                                <span>Plans</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="contact.html" class="mobile-nav-link">
+                                <span class="nav-icon">📞</span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                        <li class="mobile-nav-item">
+                            <a href="dashboard/" class="mobile-nav-link">
+                                <span class="nav-icon">📊</span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mobile-auth-section">
+                        <a href="login.html" class="btn btn-outline mobile-btn">Login</a>
+                        <a href="signup.html" class="btn btn-primary mobile-btn">Sign Up</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1454165833767-027ff33027ef?auto=format&fit=crop&w=1600&q=80');">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container text-center flex flex-col items-center">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-fade-in">Comprehensive Market Research Solutions</h1>
+                    <p class="hero-subtitle animate-fade-in">From deep market analysis to real-time dashboards, our
+                        suite of solutions provides the intelligence you need to make confident business decisions.</p>
+                    <div class="flex gap-4 animate-fade-in">
+                        <a href="#contact" class="btn btn-primary btn-large">Get Started</a>
+                        <a href="#demo" class="btn btn-outline btn-large">Request Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Market Analysis -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Market Analysis</h2>
+                    <p class="animate-fade-in">Deep insights into market dynamics, trends, and opportunities</p>
+                </div>
+                <div class="grid grid-2 gap-12 items-center">
+                    <div class="animate-slide-in-left text-center flex flex-col items-center">
+                        <h3 class="feature-title mb-4">Comprehensive Market Intelligence</h3>
+                        <p class="mb-6">Our market analysis solutions provide a 360-degree view of your industry
+                            landscape, helping you identify growth opportunities, assess market potential, and
+                            understand competitive dynamics.</p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <span class="text-primary">✓</span>
+                                <span>Market sizing and segmentation analysis</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-primary">✓</span>
+                                <span>Growth trend forecasting and projections</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-primary">✓</span>
+                                <span>Emerging market opportunity identification</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-primary">✓</span>
+                                <span>Regulatory landscape analysis</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-primary">✓</span>
+                                <span>Investment attractiveness assessment</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+                    </div>
+                    <div class="animate-slide-in-right">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                            alt="Market Analysis Dashboard" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Consumer Insights -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Consumer Insights</h2>
+                    <p class="animate-fade-in">Understand your customers like never before</p>
+                </div>
+                <div class="grid grid-2 gap-12 items-center">
+                    <div class="order-2 animate-slide-in-left">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                            alt="Consumer Behavior Analysis" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="order-1 animate-slide-in-right text-center flex flex-col items-center">
+                        <h3 class="feature-title mb-4">Advanced Consumer Behavior Analysis</h3>
+                        <p class="mb-6">Leverage cutting-edge analytics and research methodologies to gain deep insights
+                            into consumer preferences, behaviors, and decision-making patterns.</p>
+                        <div class="grid grid-2 gap-6 mb-6">
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-primary mb-2">10M+</div>
+                                    <p class="feature-description">Consumer Profiles Analyzed</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-primary mb-2">95%</div>
+                                    <p class="feature-description">Prediction Accuracy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary">•</span>
+                                <span>Purchase journey mapping and optimization</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary">•</span>
+                                <span>Brand perception and sentiment analysis</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary">•</span>
+                                <span>Customer segmentation and persona development</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-primary">•</span>
+                                <span>Loyalty and retention strategy insights</span>
+                            </li>
+                        </ul>
+                        <a href="reports.html" class="btn btn-primary">Explore Consumer Reports</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Competitive Intelligence -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Competitive Intelligence</h2>
+                    <p class="animate-fade-in">Stay ahead of the competition with strategic insights</p>
+                </div>
+                <div class="grid grid-3 gap-8">
+                    <div class="card animate-slide-in-left">
+                        <div class="text-center">
+                            <div class="feature-icon">🎯</div>
+                            <h3 class="feature-title">Competitor Analysis</h3>
+                            <p class="feature-description">Comprehensive profiling of key competitors including
+                                strategies, strengths, weaknesses, and market positioning.</p>
+                            <a href="#" class="btn btn-outline btn-small mt-4">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card animate-fade-in">
+                        <div class="text-center">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="feature-title">Market Share Tracking</h3>
+                            <p class="feature-description">Real-time monitoring of market share dynamics and competitive
+                                positioning across segments.</p>
+                            <a href="#" class="btn btn-outline btn-small mt-4">View Demo</a>
+                        </div>
+                    </div>
+                    <div class="card animate-slide-in-right">
+                        <div class="text-center">
+                            <div class="feature-icon">🔍</div>
+                            <h3 class="feature-title">Strategic Benchmarking</h3>
+                            <p class="feature-description">Industry benchmarking to identify best practices and
+                                performance improvement opportunities.</p>
+                            <a href="#" class="btn btn-outline btn-small mt-4">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="contact.html" class="btn btn-primary btn-large">Request Competitive Analysis</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Custom Reports -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Custom Research Reports</h2>
+                    <p class="animate-fade-in">Tailored insights for your specific business challenges</p>
+                </div>
+                <div class="grid grid-2 gap-12 items-center">
+                    <div class="animate-slide-in-left text-center flex flex-col items-center">
+                        <h3 class="feature-title mb-4">Bespoke Research Solutions</h3>
+                        <p class="mb-6">Our custom research reports are designed to address your unique business
+                            questions and strategic challenges, delivering actionable insights that drive results.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="feature-icon">📋</div>
+                                <div>
+                                    <h4 class="feature-title">Custom Scope & Methodology</h4>
+                                    <p class="feature-description">Research designed specifically for your objectives,
+                                        industry, and timeline.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="feature-icon">👥</div>
+                                <div>
+                                    <h4 class="feature-title">Dedicated Research Team</h4>
+                                    <p class="feature-description">Expert analysts assigned to your project with
+                                        industry-specific expertise.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="feature-icon">📈</div>
+                                <div>
+                                    <h4 class="feature-title">Interactive Deliverables</h4>
+                                    <p class="feature-description">Dynamic reports with data visualization and
+                                        actionable recommendations.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="feature-icon">🔄</div>
+                                <div>
+                                    <h4 class="feature-title">Ongoing Support</h4>
+                                    <p class="feature-description">Post-delivery consultation and implementation
+                                        guidance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary mt-6">Start Custom Project</a>
+                    </div>
+                    <div class="animate-slide-in-right">
+                        <div class="card p-6">
+                            <h4 class="card-title mb-4">Recent Custom Projects</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h5 class="font-semibold">Market Entry Strategy</h5>
+                                    <p class="text-sm text-muted">Fortune 500 tech company expansion into Southeast Asia
+                                    </p>
+                                </div>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h5 class="font-semibold">Product Launch Analysis</h5>
+                                    <p class="text-sm text-muted">Consumer goods company new product viability study</p>
+                                </div>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h5 class="font-semibold">M&A Due Diligence</h5>
+                                    <p class="text-sm text-muted">Private equity target market assessment</p>
+                                </div>
+                                <div class="border-l-4 border-primary pl-4">
+                                    <h5 class="font-semibold">Digital Transformation</h5>
+                                    <p class="text-sm text-muted">Retailer e-commerce opportunity analysis</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <a href="contact.html" class="btn btn-outline">View Case Studies</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Analytics Dashboard -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">Analytics Dashboard</h2>
+                    <p class="animate-fade-in">Real-time insights at your fingertips</p>
+                </div>
+                <div class="grid grid-2 gap-12 items-center">
+                    <div class="order-2 animate-slide-in-left">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                            alt="Analytics Dashboard" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="order-1 animate-slide-in-right text-center flex flex-col items-center">
+                        <h3 class="feature-title mb-4">Powerful Analytics Platform</h3>
+                        <p class="mb-6">Our interactive dashboard provides real-time access to market data, trends, and
+                            insights, enabling you to make data-driven decisions with confidence.</p>
+                        <div class="grid grid-2 gap-4 mb-6">
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="feature-icon">📊</div>
+                                    <h4 class="feature-title">Real-Time Data</h4>
+                                    <p class="feature-description">Live market updates and alerts</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="feature-icon">🎨</div>
+                                    <h4 class="feature-title">Custom Visualizations</h4>
+                                    <p class="feature-description">Interactive charts and graphs</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="feature-icon">📱</div>
+                                    <h4 class="feature-title">Mobile Access</h4>
+                                    <p class="feature-description">Access insights on any device</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="text-center">
+                                    <div class="feature-icon">🔔</div>
+                                    <h4 class="feature-title">Smart Alerts</h4>
+                                    <p class="feature-description">Automated trend notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="signup.html" class="btn btn-primary">Try Dashboard Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: API Access -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="animate-fade-in">API & Data Access</h2>
+                    <p class="animate-fade-in">Integrate market intelligence into your systems</p>
+                </div>
+                <div class="grid grid-3 gap-8">
+                    <div class="card animate-slide-in-left">
+                        <div class="text-center">
+                            <div class="feature-icon">🔌</div>
+                            <h3 class="feature-title">RESTful API</h3>
+                            <p class="feature-description">Comprehensive API for seamless integration with your existing
+                                systems and applications.</p>
+                        </div>
+                    </div>
+                    <div class="card animate-fade-in">
+                        <div class="text-center">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="feature-title">Data Feeds</h3>
+                            <p class="feature-description">Real-time and batch data feeds for automated market
+                                intelligence workflows.</p>
+                        </div>
+                    </div>
+                    <div class="card animate-slide-in-right">
+                        <div class="text-center">
+                            <div class="feature-icon">🛠️</div>
+                            <h3 class="feature-title">Developer Tools</h3>
+                            <p class="feature-description">SDKs, documentation, and support for quick implementation and
+                                customization.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-8 p-8">
+                    <div class="grid grid-2 gap-8 items-center">
+                        <div>
+                            <h3 class="feature-title mb-4">API Features</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">✓</span>
+                                    <span>JSON and XML response formats</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">✓</span>
+                                    <span>OAuth 2.0 authentication</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">✓</span>
+                                    <span>Rate limiting and throttling</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">✓</span>
+                                    <span>Comprehensive documentation</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">✓</span>
+                                    <span>Sandbox environment for testing</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="feature-title mb-4">Use Cases</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">•</span>
+                                    <span>Automated reporting systems</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">•</span>
+                                    <span>Trading and investment platforms</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">•</span>
+                                    <span>Business intelligence tools</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">•</span>
+                                    <span>Custom analytics applications</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-primary">•</span>
+                                    <span>Mobile app integration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get API Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-light.svg" alt="Market Research Firm" class="logo">
+                    </div>
+                    <p class="footer-description">
+                        Market Research Firm - Leading provider of premium market intelligence and data analytics for
+                        enterprise decision-making.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                        <li><a href="plans.html">Plans</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Market Analysis</a></li>
+                        <li><a href="#">Consumer Insights</a></li>
+                        <li><a href="#">Competitive Intelligence</a></li>
+                        <li><a href="#">Custom Reports</a></li>
+                        <li><a href="#">Analytics Dashboard</a></li>
+                        <li><a href="#">API Access</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>123 Business Ave, Suite 100<br>New York, NY 10001</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span>info@marketresearchfirm.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Market Research Firm. All rights reserved.</p>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+</body>
+
+</html>
