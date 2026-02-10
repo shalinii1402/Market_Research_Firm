@@ -25,13 +25,15 @@
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <div class="logo">
-                        <img src="../assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
-                        <span class="logo-text">
-                            <strong>Market Research</strong>
-                            <span>Firm</span>
-                        </span>
-                    </div>
+                    <a href="../index.html" class="logo-link">
+                        <div class="logo">
+                            <img src="../assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
+                            <span class="logo-text">
+                                <strong>Market Research</strong>
+                                <span>Firm</span>
+                            </span>
+                        </div>
+                    </a>
                 </div>
                 <button class="sidebar-toggle" id="sidebarToggle">
                     <span></span>
@@ -79,26 +81,27 @@
                             <span class="notification-badge">3</span>
                         </a>
                     </li>
-                    <li class="sidebar-item mobile-only">
-                        <a href="../index.html" class="sidebar-link">
-                            <span class="sidebar-icon">🚪</span>
-                            <span class="sidebar-text">Logout</span>
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
 
             <div class="sidebar-footer">
                 <div class="user-profile">
                     <div class="user-avatar">
-                        <img src="../assets/images/dashboard/user-avatar.jpg" alt="User Avatar" class="avatar">
+                        <img src="../assets/images/dashboard/user-avatar.jpg" alt="User Avatar" class="avatar"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback"
+                            style="display:none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-light); align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <div class="user-info">
                         <div class="user-name">John Doe</div>
                         <div class="user-email">john@marketresearchfirm.com</div>
                     </div>
                 </div>
-                <a href="../index.html" class="logout-btn desktop-only">
+
+                <a href="../index.html" class="sidebar-link logout-link" style="color: #ef4444; margin-top: 0.5rem;">
                     <span class="sidebar-icon">🚪</span>
                     <span class="sidebar-text">Logout</span>
                 </a>
@@ -107,6 +110,23 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+
+        <!-- Mobile Header -->
+        <div class="mobile-dashboard-header">
+            <button class="mobile-hamburger" id="mobileDashboardToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-logo-small">
+                <img src="../assets/images/logo/icon-only.svg" alt="Logo">
+            </div>
+            <div class="user-avatar-small">
+                <img src="../assets/images/dashboard/user-avatar.jpg" alt="User" class="avatar"
+                    onerror="this.style.display='none';">
+            </div>
+        </div>
 
         <!-- Main Content -->
         <main class="dashboard-main" id="dashboardMain">
@@ -310,15 +330,28 @@
 
             // Mobile menu handling
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileDashboardToggle = document.getElementById('mobileDashboardToggle');
 
-            if (window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-                dashboardMain.classList.add('collapsed');
+            if (mobileDashboardToggle) {
+                mobileDashboardToggle.addEventListener('click', function () {
+                    sidebar.classList.add('active');
+                    mobileMenuOverlay.classList.add('active');
+                });
             }
 
             mobileMenuOverlay.addEventListener('click', function () {
                 sidebar.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
+            });
+
+            // Close sidebar on link click (mobile)
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                    }
+                });
             });
         });
     </script>

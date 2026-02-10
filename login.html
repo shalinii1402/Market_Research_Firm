@@ -4,243 +4,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Research Firm - Login | Access Your Account</title>
-    <meta name="description"
-        content="Market Research Firm - Login to your account to access premium reports, analytics, and insights.">
+    <title>Login - Market Research Firm</title>
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/auth.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo/icon-only.svg">
+    <style>
+        :root {
+            --auth-bg: #0f172a;
+            --auth-card-bg: rgba(30, 41, 59, 0.7);
+            --auth-text: #f8fafc;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--auth-bg);
+            color: var(--auth-text);
+        }
+
+        .auth-viewport {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+        }
+
+        .brand-logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .brand-logo .logo-text {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .brand-logo .logo-text span {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .auth-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.1);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toggle-password:hover {
+            color: var(--accent-color);
+        }
+
+        .auth-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .auth-checkbox {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .auth-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+        }
+
+        .divider {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        .divider span {
+            position: relative;
+            background: var(--auth-bg);
+            padding: 0 1rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+            z-index: 2;
+        }
+
+        .social-logins {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .signup-prompt {
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        .signup-prompt a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-prompt a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
-<div class="auth-layout">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"
-        style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </button>
-    <div class="auth-container">
-        <div class="auth-split">
-            <!-- Left Side - Info -->
-            <div class="auth-info">
-                <div class="auth-info-content">
-                    <h1>Welcome Back</h1>
-                    <p>Access your premium market research dashboard and continue your journey to data-driven
-                        decision making.</p>
-                    <ul class="auth-features">
-                        <li>
-                            <div class="feature-icon">📊</div>
-                            <span>Access 1,500+ premium reports</span>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📈</div>
-                            <span>Real-time market analytics</span>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🔍</div>
-                            <span>Custom research tools</span>
-                        </li>
-                        <li>
-                            <div class="feature-icon">📱</div>
-                            <span>Mobile-optimized dashboard</span>
-                        </li>
-                        <li>
-                            <div class="feature-icon">👥</div>
-                            <span>Team collaboration features</span>
-                        </li>
-                        <li>
-                            <div class="feature-icon">🔔</div>
-                            <span>Instant market alerts</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<body>
+    <div class="auth-viewport">
+        <div class="auth-card">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo/icon-only.svg" alt="Logo">
+                <div class="logo-text"><strong>Market Research</strong> <span>Firm</span></div>
+            </a>
 
-            <!-- Right Side - Login Form -->
-            <div class="auth-form-section">
-                <div class="auth-form-header">
-                    <div class="auth-logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/icon-only.svg" alt="Market Research Firm" class="logo">
-                            <span class="logo-text">
-                                <strong>Market Research</strong>
-                                <span>Firm</span>
-                            </span>
-                        </a>
-                    </div>
-                    <h2 class="auth-form-title">Sign In</h2>
-                    <p class="auth-form-subtitle">Enter your credentials to access your account</p>
+            <h1 class="auth-title">Login</h1>
+
+            <form action="#">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="auth-input" placeholder="name@company.com" required>
                 </div>
 
-                <form class="auth-form">
-                    <div class="auth-error" style="display: none;">
-                        Invalid email or password. Please try again.
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" class="auth-input" id="passwordInput" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
                     </div>
+                </div>
 
-                    <div class="auth-form-group">
-                        <label class="auth-form-label">Email Address</label>
-                        <div class="auth-input-wrapper">
-                            <input type="email" class="auth-input" placeholder="Enter your email" required>
-                        </div>
-                    </div>
-
-                    <div class="auth-form-group">
-                        <label class="auth-form-label">Password</label>
-                        <div class="auth-input-wrapper">
-                            <input type="password" class="auth-input" placeholder="Enter your password" required
-                                id="passwordInput">
-                            <button type="button" class="auth-input-icon" id="togglePassword">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="auth-checkbox-group">
+                <div class="auth-options">
+                    <div class="checkbox-group">
                         <input type="checkbox" id="remember" class="auth-checkbox">
-                        <label for="remember" class="auth-checkbox-label">Remember me for 30 days</label>
+                        <label for="remember">Remember me</label>
                     </div>
-
-                    <div class="flex justify-end items-center mb-6">
-                        <a href="#" class="text-primary text-sm hover:underline">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="auth-submit">Sign In</button>
-
-                    <div class="auth-divider">
-                        <span>Or continue with</span>
-                    </div>
-
-                    <div class="auth-social">
-                        <button type="button" class="auth-social-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                                <path
-                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                                <path
-                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                                <path
-                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                            </svg>
-                            Google
-                        </button>
-                        <button type="button" class="auth-social-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                            LinkedIn
-                        </button>
-                    </div>
-
-                    <div class="auth-footer">
-                        <p>Don't have an account? <a href="signup.html" class="text-primary hover:underline">Sign
-                                up</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="premium-footer">
-    <div class="footer-container">
-        <div class="footer-main">
-            <div class="footer-section footer-brand">
-                <div class="footer-logo">
-                    <a href="index.html" class="logo-link">
-                        <div class="logo">
-                            <img src="assets/images/logo/icon-only.svg" alt="Market Research Firm Logo">
-                            <span class="logo-text">
-                                <strong>Market Research</strong>
-                                <span>Firm</span>
-                            </span>
-                        </div>
-                    </a>
+                    <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
-                <p class="footer-description">
-                    Market Research Firm - Leading provider of premium market intelligence and data analytics for
-                    enterprise decision-making.
+
+                <button type="submit" class="auth-btn">Login</button>
+
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+
+                <div class="social-logins">
+                    <button type="button" class="social-btn" title="Google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button type="button" class="social-btn" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </div>
+
+                <p class="signup-prompt">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
                 </p>
-                <div class="footer-social">
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">Facebook</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home 1</a></li>
-                    <li><a href="plans.html">Plans</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 class="footer-title">Contact Info</h3>
-                <div class="footer-contact">
-                    <div class="contact-item">123 Business Ave, Suite 100<br>New York, NY 10001</div>
-                    <div class="contact-item">+1 (555) 123-4567</div>
-                    <div class="contact-item">info@marketresearchfirm.com</div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <div class="footer-copyright">
-                    <p>&copy; 2026 Market Research Firm. All rights reserved.</p>
-                </div>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
-</footer>
 
-<script>
-    // Toggle password visibility
-    document.getElementById('togglePassword').addEventListener('click', function () {
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('passwordInput');
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
 
-        // Toggle icon
-        this.innerHTML = type === 'password'
-            ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>'
-            : '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3c0-.22-.03-.44-.08-.65l1.55 1.55c-.67.33-1.41.53-2.22.53-2.76 0-5-2.24-5-5 0-.81.2-1.55.53-2.22l-4.9-4.9z"/></svg>';
-    });
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
 
-    // Form submission
-    document.querySelector('.auth-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Show loading state
-        const submitBtn = document.querySelector('.auth-submit');
-        const originalText = submitBtn.textContent;
-        submitBtn.classList.add('auth-loading');
-        submitBtn.textContent = 'Signing in...';
-
-        // Simulate API call
-        setTimeout(() => {
-            submitBtn.classList.remove('auth-loading');
-            submitBtn.textContent = originalText;
-
-            // Redirect to dashboard on success
-            window.location.href = 'dashboard/index.html';
-        }, 2000);
-    });
-</script>
-<script src="assets/js/main.js"></script>
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 
 </html>
