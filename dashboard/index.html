@@ -131,164 +131,226 @@
         <!-- Main Content -->
         <main class="dashboard-main" id="dashboardMain">
             <div class="dashboard-content">
-                <!-- Dashboard Header -->
-                <div class="dashboard-header">
-                    <h1 class="dashboard-title">Analytics Dashboard</h1>
-                    <p class="dashboard-subtitle">Real-time market intelligence and insights</p>
+                <!-- Overview Section -->
+                <div id="overview" class="dashboard-tab-content">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Analytics Dashboard</h1>
+                        <p class="dashboard-subtitle">Real-time market intelligence and insights</p>
+                    </div>
+
+                    <!-- Stats Overview -->
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">Total Reports</h3>
+                                <div class="dashboard-card-icon">📊</div>
+                            </div>
+                            <div class="dashboard-card-value">1,284</div>
+                            <div class="dashboard-card-change positive">+12.5% from last month</div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">Active Users</h3>
+                                <div class="dashboard-card-icon">👥</div>
+                            </div>
+                            <div class="dashboard-card-value">8,432</div>
+                            <div class="dashboard-card-change positive">+8.3% from last week</div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">Market Coverage</h3>
+                                <div class="dashboard-card-icon">🌍</div>
+                            </div>
+                            <div class="dashboard-card-value">156</div>
+                            <div class="dashboard-card-change positive">+4 countries added</div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">Data Accuracy</h3>
+                                <div class="dashboard-card-icon">🎯</div>
+                            </div>
+                            <div class="dashboard-card-value">99.8%</div>
+                            <div class="dashboard-card-change positive">+0.3% improvement</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Reports -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h3 class="dashboard-card-title">Recent Reports</h3>
+                            <div class="dashboard-card-icon">📄</div>
+                        </div>
+                        <div class="reports-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Report Name</th>
+                                        <th>Industry</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Q4 2024 Market Analysis</td>
+                                        <td>Technology</td>
+                                        <td>2024-12-15</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td><a href="#" class="btn btn-small">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Consumer Behavior Study</td>
+                                        <td>Retail</td>
+                                        <td>2024-12-14</td>
+                                        <td><span class="status-badge in-progress">In Progress</span></td>
+                                        <td><a href="#" class="btn btn-small">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Healthcare Trends 2025</td>
+                                        <td>Healthcare</td>
+                                        <td>2024-12-13</td>
+                                        <td><span class="status-badge completed">Completed</span></td>
+                                        <td><a href="#" class="btn btn-small">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Financial Markets Outlook</td>
+                                        <td>Finance</td>
+                                        <td>2024-12-12</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td><a href="#" class="btn btn-small">View</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">Quick Actions</h3>
+                                <div class="dashboard-card-icon">⚡</div>
+                            </div>
+                            <div class="quick-actions">
+                                <a href="#" class="btn btn-primary">Generate New Report</a>
+                                <a href="#" class="btn btn-outline">Export Data</a>
+                                <a href="#" class="btn btn-outline">Schedule Analysis</a>
+                                <a href="#" class="btn btn-outline">View Settings</a>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="dashboard-card-header">
+                                <h3 class="dashboard-card-title">System Status</h3>
+                                <div class="dashboard-card-icon">🔧</div>
+                            </div>
+                            <div class="system-status">
+                                <div class="status-item">
+                                    <span class="status-label">Data Processing</span>
+                                    <span class="status-indicator active">Active</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">API Status</span>
+                                    <span class="status-indicator active">Online</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Storage</span>
+                                    <span class="status-indicator warning">78% Used</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Last Sync</span>
+                                    <span class="status-indicator">2 mins ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Stats Overview -->
-                <div class="dashboard-grid">
+                <!-- Analytics Section -->
+                <div id="analytics" class="dashboard-tab-content" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Analytics</h1>
+                        <p class="dashboard-subtitle">Detailed data analysis and performance metrics</p>
+                    </div>
                     <div class="dashboard-card">
                         <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Total Reports</h3>
-                            <div class="dashboard-card-icon">📊</div>
+                            <h3 class="dashboard-card-title">Traffic Analysis</h3>
                         </div>
-                        <div class="dashboard-card-value">1,284</div>
-                        <div class="dashboard-card-change positive">+12.5% from last month</div>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Active Users</h3>
-                            <div class="dashboard-card-icon">👥</div>
-                        </div>
-                        <div class="dashboard-card-value">8,432</div>
-                        <div class="dashboard-card-change positive">+8.3% from last week</div>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Market Coverage</h3>
-                            <div class="dashboard-card-icon">🌍</div>
-                        </div>
-                        <div class="dashboard-card-value">156</div>
-                        <div class="dashboard-card-change positive">+4 countries added</div>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Data Accuracy</h3>
-                            <div class="dashboard-card-icon">🎯</div>
-                        </div>
-                        <div class="dashboard-card-value">99.8%</div>
-                        <div class="dashboard-card-change positive">+0.3% improvement</div>
-                    </div>
-                </div>
-
-                <!-- Charts Section -->
-                <div class="dashboard-grid">
-                    <div class="dashboard-card" style="grid-column: span 2;">
-                        <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Market Trends</h3>
-                            <div class="dashboard-card-icon">📈</div>
-                        </div>
-                        <div class="chart-container">
-                            <img src="../assets/images/dashboard/market-trends-chart.jpg" alt="Market Trends Chart"
-                                class="chart-image">
-                        </div>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Industry Distribution</h3>
-                            <div class="dashboard-card-icon">🏢</div>
-                        </div>
-                        <div class="chart-container">
-                            <img src="../assets/images/dashboard/industry-distribution.jpg" alt="Industry Distribution"
-                                class="chart-image">
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Advanced Analytics Module Loading...</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Recent Reports -->
-                <div class="dashboard-card">
-                    <div class="dashboard-card-header">
-                        <h3 class="dashboard-card-title">Recent Reports</h3>
-                        <div class="dashboard-card-icon">📄</div>
+                <!-- Reports Section -->
+                <div id="reports" class="dashboard-tab-content" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Reports</h1>
+                        <p class="dashboard-subtitle">Manage and generate market reports</p>
                     </div>
-                    <div class="reports-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Report Name</th>
-                                    <th>Industry</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Q4 2024 Market Analysis</td>
-                                    <td>Technology</td>
-                                    <td>2024-12-15</td>
-                                    <td><span class="status-badge completed">Completed</span></td>
-                                    <td><a href="#" class="btn btn-small">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Consumer Behavior Study</td>
-                                    <td>Retail</td>
-                                    <td>2024-12-14</td>
-                                    <td><span class="status-badge in-progress">In Progress</span></td>
-                                    <td><a href="#" class="btn btn-small">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Healthcare Trends 2025</td>
-                                    <td>Healthcare</td>
-                                    <td>2024-12-13</td>
-                                    <td><span class="status-badge completed">Completed</span></td>
-                                    <td><a href="#" class="btn btn-small">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Financial Markets Outlook</td>
-                                    <td>Finance</td>
-                                    <td>2024-12-12</td>
-                                    <td><span class="status-badge pending">Pending</span></td>
-                                    <td><a href="#" class="btn btn-small">View</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h3 class="dashboard-card-title">All Reports</h3>
+                        </div>
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <i class="fas fa-file-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Reports Archive Loading...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Quick Actions -->
-                <div class="dashboard-grid">
+                <!-- Insights Section -->
+                <div id="insights" class="dashboard-tab-content" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Insights</h1>
+                        <p class="dashboard-subtitle">AI-powered market insights and predictions</p>
+                    </div>
                     <div class="dashboard-card">
                         <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">Quick Actions</h3>
-                            <div class="dashboard-card-icon">⚡</div>
+                            <h3 class="dashboard-card-title">Daily Insights</h3>
                         </div>
-                        <div class="quick-actions">
-                            <a href="#" class="btn btn-primary">Generate New Report</a>
-                            <a href="#" class="btn btn-outline">Export Data</a>
-                            <a href="#" class="btn btn-outline">Schedule Analysis</a>
-                            <a href="#" class="btn btn-outline">View Settings</a>
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <i class="fas fa-lightbulb" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Generating Insights...</p>
                         </div>
                     </div>
+                </div>
 
+                <!-- Trends Section -->
+                <div id="trends" class="dashboard-tab-content" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Market Trends</h1>
+                        <p class="dashboard-subtitle">Emerging trends and global shifts</p>
+                    </div>
                     <div class="dashboard-card">
                         <div class="dashboard-card-header">
-                            <h3 class="dashboard-card-title">System Status</h3>
-                            <div class="dashboard-card-icon">🔧</div>
+                            <h3 class="dashboard-card-title">Global Trends</h3>
                         </div>
-                        <div class="system-status">
-                            <div class="status-item">
-                                <span class="status-label">Data Processing</span>
-                                <span class="status-indicator active">Active</span>
-                            </div>
-                            <div class="status-item">
-                                <span class="status-label">API Status</span>
-                                <span class="status-indicator active">Online</span>
-                            </div>
-                            <div class="status-item">
-                                <span class="status-label">Storage</span>
-                                <span class="status-indicator warning">78% Used</span>
-                            </div>
-                            <div class="status-item">
-                                <span class="status-label">Last Sync</span>
-                                <span class="status-indicator">2 mins ago</span>
-                            </div>
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <i class="fas fa-globe" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Trend Analysis Module...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts Section -->
+                <div id="alerts" class="dashboard-tab-content" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Alerts & Notifications</h1>
+                        <p class="dashboard-subtitle">Real-time system and market alerts</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h3 class="dashboard-card-title">Recent Alerts</h3>
+                        </div>
+                        <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                            <i class="fas fa-bell" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>You have 3 unread notifications</p>
                         </div>
                     </div>
                 </div>
@@ -319,14 +381,61 @@
                 this.classList.toggle('active');
             });
 
-            // Navigation active state
+            // Navigation Tab Switching Logic
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const sections = document.querySelectorAll('.dashboard-tab-content');
+
+            function switchTab(targetId) {
+                // Update Sidebar Active State
+                sidebarLinks.forEach(link => {
+                    if (link.getAttribute('href') === '#' + targetId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+                // Show Target Section
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.style.display = 'block';
+                        // Trigger a slight animation if supported
+                        section.style.animation = 'none';
+                        section.offsetHeight; /* trigger reflow */
+                        section.style.animation = 'fadeIn 0.3s ease';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
             sidebarLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
-                    sidebarLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
+                    const href = this.getAttribute('href');
+
+                    // Only handle internal tab links
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        switchTab(targetId);
+
+                        // Close mobile sidebar on selection
+                        if (window.innerWidth <= 768) {
+                            sidebar.classList.remove('active');
+                            mobileMenuOverlay.classList.remove('active');
+                        }
+                    }
                 });
             });
+
+            // Handle initial hash or default to overview
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                switchTab(hash);
+            } else {
+                // Default to overview if no hash
+                switchTab('overview');
+            }
 
             // Mobile menu handling
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
@@ -342,16 +451,6 @@
             mobileMenuOverlay.addEventListener('click', function () {
                 sidebar.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
-            });
-
-            // Close sidebar on link click (mobile)
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        sidebar.classList.remove('active');
-                        mobileMenuOverlay.classList.remove('active');
-                    }
-                });
             });
         });
     </script>

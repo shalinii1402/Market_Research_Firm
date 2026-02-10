@@ -572,13 +572,13 @@
     padding: 0.75rem;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
-    color: #FFFFFF;
+    color: var(--secondary-color);
 }
 
 .reports-table th {
     font-weight: 600;
-    color: #FFFFFF;
-    background: var(--primary-color);
+    color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .status-badge {

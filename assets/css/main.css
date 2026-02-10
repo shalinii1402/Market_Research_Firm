@@ -1405,7 +1405,7 @@ body.light-mode .theme-toggle .fa-moon {
     align-items: center;
     justify-content: center;
     background: var(--accent-color);
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     border-radius: 50%;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -1608,7 +1608,8 @@ button.btn-outline:hover {
 /* Compact Hero for Subpages */
 .hero-compact {
     min-height: 40vh !important;
-    padding: 4rem 0 !important;
+    padding: 120px 0 60px 0 !important;
+    /* Increased top padding to clear fixed header */
     display: flex;
     align-items: center;
     position: relative;
@@ -1619,6 +1620,21 @@ button.btn-outline:hover {
     height: 100% !important;
 }
 
+/* Ensure hero title doesn't overflow horizontally */
+.hero-title {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Light Mode Shadow Adjustment */
+body.light-mode .hero-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
 /* Global Logo Consistency */
 .logo,
 .mobile-logo,
@@ -1627,7 +1643,7 @@ button.btn-outline:hover {
 .auth-logo {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 8px !important;
 }
 
 .logo img,
@@ -1635,8 +1651,8 @@ button.btn-outline:hover {
 .footer-logo .logo img,
 .brand-header img,
 .auth-logo img {
-    width: 50px !important;
-    height: 50px !important;
+    width: 32px !important;
+    height: 32px !important;
     object-fit: contain !important;
 }
 
@@ -1646,7 +1662,7 @@ button.btn-outline:hover {
 .auth-logo .logo-text {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 4px !important;
     line-height: 1 !important;
 }
 
@@ -1658,8 +1674,8 @@ button.btn-outline:hover {
 .brand-header .logo-text span,
 .auth-logo .logo-text strong,
 .auth-logo .logo-text span {
-    font-size: 26px !important;
+    font-size: 24px !important;
     font-weight: 700 !important;
     line-height: 1 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: -0.02em !important;
 }
