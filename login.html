@@ -4,88 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Market Research Firm</title>
+    <title>Login - MR Firm</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo/icon-only.svg">
     <style>
         :root {
-            --auth-bg: #0f172a;
-            --auth-card-bg: rgba(30, 41, 59, 0.7);
-            --auth-text: #f8fafc;
+            --auth-bg-gradient: linear-gradient(135deg, #050505 0%, #1a1a1a 100%);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --auth-text-primary: #ffffff;
+            --auth-text-secondary: #94a3b8;
+            --auth-input-bg: rgba(255, 255, 255, 0.03);
+            --auth-input-border: rgba(255, 255, 255, 0.08);
+            --auth-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode {
+            --auth-bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --card-glass: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(0, 0, 0, 0.08);
+            --auth-text-primary: #1a1a1a;
+            --auth-text-secondary: #64748b;
+            --auth-input-bg: #ffffff;
+            --auth-input-border: rgba(0, 0, 0, 0.15);
+            --auth-card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
         }
 
         body,
         html {
-            height: 100%;
+            height: 100vh;
             margin: 0;
             overflow: hidden;
             font-family: 'Inter', sans-serif;
-            background: var(--auth-bg);
-            color: var(--auth-text);
+            background: var(--auth-bg-gradient);
+            color: var(--auth-text-primary);
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .auth-viewport {
             height: 100vh;
+            width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        /* Subtle background glow */
+        .auth-viewport::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent-color);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .theme-toggle-wrapper {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
         }
 
         .auth-card {
             width: 100%;
-            max-width: 400px;
-            text-align: center;
-            animation: fadeIn 0.6s ease-out;
+            max-width: 440px;
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--auth-card-shadow);
+            animation: cardFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
         }
 
-        @keyframes fadeIn {
+        @keyframes cardFadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: scale(0.95) translateY(10px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1) translateY(0);
             }
         }
 
-        .brand-logo {
+        .brand-header {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 0.75rem;
+            justify-content: center;
+            gap: 12px;
             margin-bottom: 2rem;
             text-decoration: none;
         }
 
-        .brand-logo img {
-            width: 50px;
-            height: 50px;
+        .brand-header img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
         }
 
-        .brand-logo .logo-text {
+        .brand-header .logo-text {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .brand-header .logo-text strong {
             color: var(--accent-color);
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1;
         }
 
-        .brand-logo .logo-text span {
+        .brand-header .logo-text span {
             color: var(--secondary-color);
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
         }
 
-        .auth-title {
+        .auth-heading {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-heading h1 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 2rem;
-            color: #fff;
+            color: var(--auth-text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .auth-heading p {
+            color: var(--auth-text-secondary);
+            font-size: 0.95rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             text-align: left;
         }
 
@@ -93,8 +166,10 @@
             display: block;
             font-size: 0.875rem;
             font-weight: 500;
+            color: var(--auth-text-primary);
             margin-bottom: 0.5rem;
-            color: #94a3b8;
+            margin-left: 4px;
+            opacity: 0.9;
         }
 
         .input-wrapper {
@@ -103,174 +178,218 @@
 
         .auth-input {
             width: 100%;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0.75rem;
-            color: #fff;
+            padding: 0.875rem 1.25rem;
+            background: var(--auth-input-bg);
+            border: 1px solid var(--auth-input-border);
+            border-radius: 14px;
+            color: var(--auth-text-primary);
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .auth-input:focus {
             outline: none;
+            background: var(--auth-input-bg);
             border-color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.1);
+            box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.15);
         }
 
         .toggle-password {
             position: absolute;
-            right: 1rem;
+            right: 1.25rem;
             top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #94a3b8;
+            color: var(--auth-text-secondary);
             cursor: pointer;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: color 0.2s;
         }
 
         .toggle-password:hover {
             color: var(--accent-color);
         }
 
-        .auth-options {
+        .auth-utils {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 2rem;
+            margin: 1.5rem 0 2rem;
             font-size: 0.875rem;
         }
 
-        .checkbox-group {
+        .remember-me {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--auth-text-secondary);
         }
 
-        .auth-checkbox {
-            width: 1rem;
-            height: 1rem;
-            border-radius: 0.25rem;
+        .remember-me input {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            accent-color: var(--accent-color);
             cursor: pointer;
         }
 
         .forgot-link {
-            color: var(--accent-light);
+            color: var(--accent-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 500;
         }
 
         .forgot-link:hover {
-            color: var(--accent-color);
             text-decoration: underline;
         }
 
-        .auth-btn {
+        .btn-auth {
             width: 100%;
-            padding: 0.875rem;
+            padding: 1rem;
             background: var(--accent-color);
             color: #fff;
             border: none;
-            border-radius: 0.75rem;
+            border-radius: 14px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-bottom: 2rem;
         }
 
-        .auth-btn:hover {
+        .btn-auth:hover {
             background: var(--accent-light);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+            box-shadow: 0 10px 20px -5px rgba(184, 115, 51, 0.4);
         }
 
         .divider {
-            position: relative;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 2rem 0;
+            color: var(--auth-text-secondary);
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--auth-input-border);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
             margin-bottom: 2rem;
         }
 
-        .divider::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: 1;
-        }
-
-        .divider span {
-            position: relative;
-            background: var(--auth-bg);
-            padding: 0 1rem;
-            color: #94a3b8;
-            font-size: 0.875rem;
-            z-index: 2;
-        }
-
-        .social-logins {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
         .social-btn {
-            width: 50px;
-            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
+            gap: 10px;
+            padding: 0.75rem;
+            background: var(--auth-input-bg);
+            border: 1px solid var(--auth-input-border);
+            border-radius: 12px;
+            color: var(--auth-text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
+            transition: all 0.2s;
         }
 
         .social-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-color);
+            background: var(--auth-input-border);
+            border-color: var(--auth-text-secondary);
+        }
+
+        .auth-footer {
+            text-align: center;
+            color: var(--auth-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .auth-footer a {
             color: var(--accent-color);
-            transform: scale(1.1);
-        }
-
-        .signup-prompt {
-            margin-top: 2rem;
-            font-size: 0.875rem;
-            color: #94a3b8;
-        }
-
-        .signup-prompt a {
-            color: var(--accent-light);
             text-decoration: none;
             font-weight: 600;
+            margin-left: 4px;
         }
 
-        .signup-prompt a:hover {
+        .auth-footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Fixes */
+        @media (max-height: 700px) {
+            .auth-viewport {
+                padding: 1rem;
+            }
+
+            .auth-card {
+                padding: 1.5rem 2rem;
+            }
+
+            .brand-header {
+                margin-bottom: 1rem;
+            }
+
+            .auth-heading {
+                margin-bottom: 1.25rem;
+            }
+
+            .auth-utils,
+            .divider,
+            .social-grid {
+                margin: 1rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle-wrapper {
+                top: 1rem;
+                right: 1rem;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="theme-toggle-wrapper">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
     <div class="auth-viewport">
         <div class="auth-card">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/logo/icon-only.svg" alt="Logo">
-                <div class="logo-text"><strong>Market Research</strong> <span>Firm</span></div>
+            <a href="index.html" class="brand-header">
+                <img src="assets/images/logo/icon-only.svg" alt="MR Firm Logo">
+                <div class="logo-text"><strong>MR</strong> <span>Firm</span></div>
             </a>
 
-            <h1 class="auth-title">Login</h1>
+            <div class="auth-heading">
+                <h1>Welcome Back</h1>
+                <p>Enter your credentials to access your account</p>
+            </div>
 
             <form action="#">
                 <div class="form-group">
@@ -282,54 +401,59 @@
                     <label class="form-label">Password</label>
                     <div class="input-wrapper">
                         <input type="password" class="auth-input" id="passwordInput" placeholder="••••••••" required>
-                        <button type="button" class="toggle-password" id="togglePassword">
+                        <button type="button" class="toggle-password" id="togglePassword"
+                            aria-label="Toggle password visibility">
                             <i class="fas fa-eye"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="auth-options">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="remember" class="auth-checkbox">
-                        <label for="remember">Remember me</label>
-                    </div>
+                <div class="auth-utils">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
                     <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="auth-btn">Login</button>
+                <button type="submit" class="btn-auth">Login</button>
 
                 <div class="divider">
-                    <span>Or continue with</span>
+                    Or continue with
                 </div>
 
-                <div class="social-logins">
-                    <button type="button" class="social-btn" title="Google">
-                        <i class="fab fa-google"></i>
+                <div class="social-grid">
+                    <button type="button" class="social-btn">
+                        <i class="fab fa-google" style="color: #ea4335;"></i>
+                        Google
                     </button>
-                    <button type="button" class="social-btn" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
+                    <button type="button" class="social-btn">
+                        <i class="fab fa-facebook-f" style="color: #1877f2;"></i>
+                        Facebook
                     </button>
                 </div>
 
-                <p class="signup-prompt">
-                    Don't have an account? <a href="signup.html">Sign Up</a>
+                <p class="auth-footer">
+                    Don’t have an account? <a href="signup.html">Sign Up</a>
                 </p>
             </form>
         </div>
     </div>
 
+    <script src="assets/js/main.js"></script>
     <script>
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('passwordInput');
 
-        togglePassword.addEventListener('click', function () {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-eye');
-            icon.classList.toggle('fa-eye-slash');
-        });
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+        }
     </script>
 </body>
 

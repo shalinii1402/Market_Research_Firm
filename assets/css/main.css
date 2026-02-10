@@ -1618,3 +1618,48 @@ button.btn-outline:hover {
 .hero-compact .hero-bg {
     height: 100% !important;
 }
+
+/* Global Logo Consistency */
+.logo,
+.mobile-logo,
+.footer-logo .logo,
+.brand-header,
+.auth-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.logo img,
+.mobile-logo img,
+.footer-logo .logo img,
+.brand-header img,
+.auth-logo img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain !important;
+}
+
+.logo-text,
+.mobile-logo-text,
+.brand-header .logo-text,
+.auth-logo .logo-text {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    line-height: 1 !important;
+}
+
+.logo-text strong,
+.logo-text span,
+.mobile-logo-text strong,
+.mobile-logo-text span,
+.brand-header .logo-text strong,
+.brand-header .logo-text span,
+.auth-logo .logo-text strong,
+.auth-logo .logo-text span {
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.01em !important;
+}

@@ -41,8 +41,8 @@
 .sidebar-logo .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    height: 40px;
+    gap: 12px;
+    height: auto;
     width: auto;
     transition: opacity 0.3s ease;
 }
@@ -723,6 +723,7 @@
     white-space: nowrap;
     flex-shrink: 0;
 }
+
 /* Mobile Dashboard Header */
 .mobile-dashboard-header {
     display: none;
@@ -770,16 +771,20 @@
     .mobile-dashboard-header {
         display: flex;
     }
+
     .dashboard-main {
         margin-left: 0 !important;
     }
+
     .dashboard-sidebar {
         width: 280px !important;
         transform: translateX(-100%);
     }
+
     .dashboard-sidebar.active {
         transform: translateX(0) !important;
     }
+
     .mobile-menu-overlay {
         display: none;
         position: fixed;
@@ -787,8 +792,8 @@
         background: rgba(0, 0, 0, 0.5);
         z-index: 99;
     }
+
     .mobile-menu-overlay.active {
         display: block;
     }
 }
-

@@ -46,41 +46,43 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     white-space: nowrap;
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
-    border-radius: 8px;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 .logo-text {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    /* Changed from baseline to center for better visual alignment with larger logo */
     gap: 6px;
     font-family: 'Inter', sans-serif;
 }
 
 .logo-text strong {
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--accent-color) !important;
     letter-spacing: -0.02em;
-    opacity: 1 !important;
+    line-height: 1;
 }
 
 .logo-text span {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--secondary-color) !important;
-    opacity: 1 !important;
+    line-height: 1;
 }
 
 .logo-link:hover .logo {
-    transform: scale(1.02);
+    transform: translateY(-1px);
 }
 
 .logo-link:hover .logo-text strong {
@@ -416,27 +418,27 @@
 }
 
 .mobile-logo img {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
 }
 
 .mobile-logo-text {
     display: flex;
-    align-items: baseline;
-    gap: 3px;
+    align-items: center;
+    gap: 6px;
     font-family: 'Inter', sans-serif;
 }
 
 .mobile-logo-text strong {
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--secondary-color);
 }
 
 .mobile-logo-text span {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
     color: var(--secondary-color);
 }
 
