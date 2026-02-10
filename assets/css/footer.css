@@ -74,9 +74,16 @@
 }
 
 .footer-logo .logo {
-    height: 48px;
-    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     transition: all 0.3s ease;
+}
+
+.footer-logo .logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 body.light-mode .footer-logo .logo {
@@ -84,7 +91,7 @@ body.light-mode .footer-logo .logo {
 }
 
 body:not(.light-mode) .footer-logo .logo {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .footer-description {

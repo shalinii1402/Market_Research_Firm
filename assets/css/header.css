@@ -185,9 +185,13 @@
 }
 
 .auth-section .btn-outline:hover {
-    border-color: var(--accent-color);
-    color: var(--secondary-color);
+    border-color: var(--accent-light);
+    color: #FFFFFF !important;
     background: var(--accent-color);
+}
+
+.auth-section .btn-primary:hover {
+    color: #FFFFFF !important;
 }
 
 .auth-section .btn {
@@ -351,7 +355,7 @@
 }
 
 .mobile-logo {
-    height: 32px;
+    height: 40px;
     width: auto;
 }
 
@@ -412,8 +416,8 @@
 }
 
 .mobile-logo img {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
 }
 
@@ -425,14 +429,14 @@
 }
 
 .mobile-logo-text strong {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
     color: var(--secondary-color);
 }
 
 .mobile-logo-text span {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     color: var(--secondary-color);
 }
 
@@ -517,9 +521,7 @@
         display: flex !important;
     }
 
-    .logo-text span {
-        display: none;
-    }
+
 
     .header-top {
         padding: 12px 0;
@@ -555,10 +557,6 @@
 
     .header-top {
         min-height: 65px;
-    }
-
-    .logo {
-        height: 30px;
     }
 
     .mobile-menu-header {

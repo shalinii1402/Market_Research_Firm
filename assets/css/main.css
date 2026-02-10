@@ -264,12 +264,13 @@ a:hover {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
-    color: var(--secondary-color);
+    color: #FFFFFF !important;
     box-shadow: 0 8px 24px var(--shadow-medium);
 }
 
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+    color: #FFFFFF !important;
     transform: translateY(-2px);
     box-shadow: 0 12px 32px var(--shadow-heavy);
 }
@@ -394,7 +395,8 @@ a:hover {
 }
 
 .section-dark p {
-    color: rgba(245, 245, 245, 0.9);
+    color: var(--secondary-color);
+    opacity: 0.9;
 }
 
 .section-accent {
@@ -1089,11 +1091,15 @@ a:hover {
 }
 
 .text-white {
-    color: var(--secondary-color) !important;
+    color: #FFFFFF !important;
 }
 
 .text-dark {
     color: var(--primary-color) !important;
+}
+
+.hover\:text-primary:hover {
+    color: var(--accent-color) !important;
 }
 
 /* Background Utilities - Luxury Corporate */
@@ -1110,7 +1116,31 @@ a:hover {
 }
 
 .bg-white {
-    background-color: var(--secondary-color);
+    background-color: #FFFFFF !important;
+}
+
+.hover\:bg-white:hover {
+    background-color: #FFFFFF !important;
+}
+
+.bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-white\/20 {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.text-white\/90 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.border-white {
+    border-color: #FFFFFF !important;
+}
+
+.border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Theme Toggle & Scroll-to-Top */
@@ -1242,4 +1272,216 @@ body.light-mode .theme-toggle .fa-moon {
 
 .hero-section .grid>div .grid {
     width: 100%;
+}/* Hero Buttons Specific Fix */
+.hero-section .btn-primary:hover {
+    color: #FFFFFF !important;
+    text-shadow: none;
+}
+
+.hero-section .btn-outline:hover {
+    background: #FFFFFF !important;
+    color: var(--accent-color) !important;
+    border-color: #FFFFFF !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+/* Specific fixes for Feature Cards in Dark Sections */
+.section-dark .feature-card .feature-title,
+.section-dark .feature-card .feature-description {
+    color: var(--text-light) !important;
+}
+
+/* Ensure button text is visible on hover inside dark sections */
+.section-dark .feature-card .btn-primary:hover {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+/* Specific fix for Interactive Data Visualization Button */
+.section .text-center .btn-primary:hover {
+    color: #FFFFFF !important;
+}
+
+.section .text-center .btn-primary:hover i {
+    color: #FFFFFF !important;
+}
+/* Utility Classes for Technology Section Cards */
+.w-full {
+    width: 100%;
+}
+
+.h-48 {
+    height: 12rem;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Sections Button Hover Fix */
+.section-dark .text-center .btn-primary:hover,
+.section-accent .text-center .btn-primary:hover,
+.hero-section .btn-primary:hover {
+    color: #FFFFFF !important;
+    opacity: 1;
+}
+
+.section-dark .text-center .btn-outline:hover,
+.section-accent .text-center .btn-outline:hover {
+    background: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+/* Global Button Hover Visibility Fix */
+.btn-primary:hover,
+.hero .btn-primary:hover,
+.hero-section .btn-primary:hover,
+.section-dark .btn-primary:hover,
+.section-accent .btn-primary:hover {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+.btn-outline:hover,
+.hero .btn-outline:hover,
+.hero-section .btn-outline:hover,
+.section-dark .btn-outline:hover,
+.section-accent .btn-outline:hover {
+    background: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+/* Image and Dimension Utilities */
+.w-32 {
+    width: 8rem !important;
+}
+
+.h-32 {
+    height: 8rem !important;
+}
+
+.rounded-full {
+    border-radius: 9999px !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Team Card Text Visibility Fixes */
+.card .feature-title {
+    color: var(--text-light) !important;
+}
+
+.card .feature-description {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+.card .text-muted {
+    color: var(--text-muted) !important;
+    opacity: 0.8 !important;
+}
+
+/* Social Link Icons inside Cards */
+.card .social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    color: #FFFFFF !important;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.card .social-link:hover {
+    background: var(--accent-light);
+    transform: translateY(-3px);
+}
+
+/* Refined Text Muted for Cards */
+.card .text-muted {
+    color: var(--secondary-color) !important;
+    opacity: 0.7 !important;
+}
+
+/* Final Universal Fix for Button Hover Visibility */
+a.btn:hover, button.btn:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: all 0.3s ease !important;
+}
+
+a.btn-primary:hover, button.btn-primary:hover {
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-color)) !important;
+}
+
+a.btn-outline:hover, button.btn-outline:hover {
+    background: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+/* Solutions Page Card Text Visibility Fixes */
+.section-dark .card .feature-title,
+.section-dark .card .feature-description,
+.section-dark .card h1,
+.section-dark .card h2,
+.section-dark h3 {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+.section-dark .card p,
+.section-dark .container > div > p {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+/* Universal Visibility Fix for Dark Sections in All Modes */
+.section-dark, 
+.section-dark p, 
+.section-dark span, 
+.section-dark li,
+.section-dark .feature-description,
+.section-dark .card p,
+.section-dark .card .feature-description {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark .feature-title,
+.section-dark .card .feature-title {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+/* Side-by-Side Feature List Alignment */
+.flex.items-start.gap-5 .feature-icon {
+    margin: 0 !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+
+.flex.items-start.gap-5 .feature-title {
+    margin-bottom: 0.25rem !important;
+    line-height: 1.3 !important;
 }
