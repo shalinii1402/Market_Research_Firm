@@ -638,6 +638,11 @@ body {
 
 /* Small mobile devices */
 @media (max-width: 360px) {
+    .container {
+        padding: 0 1rem !important;
+        /* Increased for safety */
+    }
+
     .hero-title {
         font-size: 1.5rem !important;
         line-height: 1.2 !important;
@@ -648,33 +653,30 @@ body {
         margin-bottom: 1rem !important;
     }
 
+    /* Stack buttons for 360px specifically */
+    .hero-content .flex {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        padding: 0 0.5rem !important;
+        /* Safety margin from container edge */
+    }
+
     .btn {
+        width: 100% !important;
         font-size: 0.85rem;
         padding: 0.625rem 0.75rem;
-        min-width: auto;
+        min-width: auto !important;
         min-height: 40px;
     }
 
-    .logo-text strong {
+    .logo-text strong,
+    .logo-text span {
         font-size: 16px !important;
     }
 
-    .logo-text span {
-        font-size: 13px !important;
-    }
-
     .logo img {
-        width: 28px;
-        height: 28px;
-        gap: 6px;
-    }
-
-    .logo {
-        gap: 6px;
-    }
-
-    .container {
-        padding: 0 0.5rem;
+        width: 32px !important;
+        height: 32px !important;
     }
 
     .feature-card {

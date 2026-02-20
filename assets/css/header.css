@@ -46,18 +46,22 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
+    /* Reduced from 14px for tighter grouping */
     white-space: nowrap;
 }
 
 .logo img {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    /* Increased from 44px for better presence */
+    height: 48px;
     flex-shrink: 0;
     border-radius: 10px;
     object-fit: contain;
     filter: brightness(1.4);
     /* Enhance visibility in dark mode */
+    margin-top: 1px;
+    /* Subtle downward move to align with text */
 }
 
 body.light-mode .logo img {
@@ -67,13 +71,16 @@ body.light-mode .logo img {
 .logo-text {
     display: flex;
     align-items: center;
-    /* Changed from baseline to center for better visual alignment with larger logo */
-    gap: 6px;
+    gap: 4px;
+    /* Reduced from 6px */
     font-family: 'Inter', sans-serif;
+    transform: translateY(-1px);
+    /* Subtle upward move to align with icon */
 }
 
 .logo-text strong {
-    font-size: 28px;
+    font-size: 24px;
+    /* Reduced from 28px to balance with icon */
     font-weight: 700;
     color: #E6A775 !important;
     /* Lighter copper for better contrast */
@@ -87,7 +94,8 @@ body.light-mode .logo-text strong {
 }
 
 .logo-text span {
-    font-size: 28px;
+    font-size: 24px;
+    /* Reduced from 28px to balance with icon */
     font-weight: 700;
     color: var(--secondary-color) !important;
     line-height: 1;

@@ -576,30 +576,38 @@
 }
 
 .reports-table th {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--secondary-color);
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(255, 255, 255, 0.05);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
 }
 
 .status-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    display: inline-block;
 }
 
 .status-badge.completed {
-    background: var(--accent-color);
-    color: #FFFFFF;
+    background: rgba(184, 115, 51, 0.2);
+    color: var(--accent-light);
+    border: 1px solid rgba(184, 115, 51, 0.3);
 }
 
 .status-badge.in-progress {
-    background: var(--accent-light);
-    color: #FFFFFF;
+    background: rgba(212, 137, 91, 0.2);
+    color: var(--accent-light);
+    border: 1px solid rgba(212, 137, 91, 0.3);
 }
 
 .status-badge.pending {
-    background: var(--primary-light);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
     border: 1px solid var(--border-color);
 }
@@ -700,17 +708,14 @@
     }
 }
 
-/* Sidebar Logo Refinement */
-.sidebar-logo .logo-text strong {
-    font-size: 1.25rem !important;
-}
-
+/* Sidebar Logo Refinement - Synchronized with Global Brand */
+.sidebar-logo .logo-text strong,
 .sidebar-logo .logo-text span {
-    font-size: 1rem !important;
+    font-size: 22px !important;
 }
 
 .sidebar-logo .logo {
-    gap: 8px !important;
+    gap: 6px !important;
 }
 
 
@@ -735,6 +740,25 @@
     position: sticky;
     top: 0;
     z-index: 101;
+}
+
+@media (max-width: 1024px) {
+    .mobile-dashboard-header {
+        display: flex;
+    }
+
+    .dashboard-main {
+        margin-left: 0 !important;
+    }
+
+    .dashboard-sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+    }
+
+    .dashboard-sidebar.active {
+        transform: translateX(0);
+    }
 }
 
 .mobile-hamburger {

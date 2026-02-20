@@ -118,6 +118,128 @@ p {
     font-size: 1rem;
 }
 
+/* Utility Classes */
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+/* Spacing Utilities */
+.m-0 {
+    margin: 0 !important;
+}
+
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.mr-0 {
+    margin-right: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mt-4 {
+    margin-top: 1rem !important;
+}
+
+.mt-6 {
+    margin-top: 1.5rem !important;
+}
+
+.mt-8 {
+    margin-top: 2rem !important;
+}
+
+.mt-10 {
+    margin-top: 2.5rem !important;
+}
+
+.mt-12 {
+    margin-top: 3rem !important;
+}
+
+.mt-16 {
+    margin-top: 4rem !important;
+}
+
+.mt-20 {
+    margin-top: 5rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-8 {
+    margin-bottom: 2rem !important;
+}
+
+.mb-10 {
+    margin-bottom: 2.5rem !important;
+}
+
+.mb-12 {
+    margin-bottom: 3rem !important;
+}
+
+.mb-16 {
+    margin-bottom: 4rem !important;
+}
+
+.mb-20 {
+    margin-bottom: 5rem !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pt-10 {
+    padding-top: 2.5rem !important;
+}
+
+.pb-10 {
+    padding-bottom: 2.5rem !important;
+}
+
+.max-w-none {
+    max-width: none !important;
+}
+
 /* Links - Premium Dark Theme */
 a {
     color: var(--accent-color);
@@ -684,6 +806,15 @@ a:hover {
     padding: 6rem 0;
 }
 
+.hero-compact {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 10rem 0 6rem;
+}
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -773,6 +904,11 @@ a:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-content.text-left .hero-subtitle {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Animations */
@@ -1523,6 +1659,39 @@ button.btn-outline:hover {
     border: 1px solid rgba(184, 115, 51, 0.3) !important;
 }
 
+/* Contact Page Specific Adjustments */
+.contact-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.contact-info-item .feature-icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    font-size: 1.5rem !important;
+    background: var(--accent-color) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 /* Typography Utilities */
 .text-2xl {
     font-size: 1.5rem;
@@ -1643,7 +1812,8 @@ body.light-mode .hero-title {
 .auth-logo {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    /* Reduced for tighter look */
 }
 
 .logo img,
@@ -1651,9 +1821,12 @@ body.light-mode .hero-title {
 .footer-logo .logo img,
 .brand-header img,
 .auth-logo img {
-    width: 32px !important;
-    height: 32px !important;
+    width: 40px !important;
+    /* Increased from 32px to match text prominence */
+    height: 40px !important;
     object-fit: contain !important;
+    margin-top: 2px !important;
+    /* Push logo down slightly */
 }
 
 .logo-text,
@@ -1664,6 +1837,8 @@ body.light-mode .hero-title {
     align-items: center !important;
     gap: 4px !important;
     line-height: 1 !important;
+    transform: translateY(-2px) !important;
+    /* Pull text up for optical alignment */
 }
 
 .logo-text strong,
@@ -1674,8 +1849,9 @@ body.light-mode .hero-title {
 .brand-header .logo-text span,
 .auth-logo .logo-text strong,
 .auth-logo .logo-text span {
-    font-size: 24px !important;
+    font-size: 22px !important;
+    /* Reduced slightly from 24px for a 1:1 proportion feel */
     font-weight: 700 !important;
     line-height: 1 !important;
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.01em !important;
 }
