@@ -56,6 +56,12 @@
     flex-shrink: 0;
     border-radius: 10px;
     object-fit: contain;
+    filter: brightness(1.4);
+    /* Enhance visibility in dark mode */
+}
+
+body.light-mode .logo img {
+    filter: none;
 }
 
 .logo-text {
@@ -69,9 +75,15 @@
 .logo-text strong {
     font-size: 28px;
     font-weight: 700;
-    color: var(--accent-color) !important;
+    color: #E6A775 !important;
+    /* Lighter copper for better contrast */
     letter-spacing: -0.02em;
     line-height: 1;
+}
+
+/* Revert to original accent color in light mode */
+body.light-mode .logo-text strong {
+    color: var(--accent-color) !important;
 }
 
 .logo-text span {
