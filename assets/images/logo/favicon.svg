@@ -1,33 +1,57 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="32" height="32" rx="4" fill="url(#faviconGradient)"/>
-  
-  <!-- Crystal Symbol Scaled -->
-  <g transform="translate(16, 16) scale(0.7) translate(-16, -16)">
-    <!-- Outer crystal frame -->
-    <path d="M16 6 L22 10 L22 18 L16 22 L10 18 L10 10 Z" fill="white" opacity="0.15"/>
-    
-    <!-- Central diamond -->
-    <path d="M16 11 L19 14 L16 17 L13 14 Z" fill="white"/>
-    
-    <!-- Data rays -->
-    <path d="M16 8 L16 11 M16 17 L16 20 M13 11 L10 9 M19 11 L22 9 M13 17 L10 19 M19 17 L22 19" 
-          stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-    
-    <!-- Energy points -->
-    <circle cx="16" cy="8" r="1" fill="white" opacity="0.9"/>
-    <circle cx="16" cy="20" r="1" fill="white" opacity="0.9"/>
-    <circle cx="10" cy="9" r="0.8" fill="white" opacity="0.6"/>
-    <circle cx="22" cy="9" r="0.8" fill="white" opacity="0.6"/>
-    <circle cx="10" cy="19" r="0.8" fill="white" opacity="0.6"/>
-    <circle cx="22" cy="19" r="0.8" fill="white" opacity="0.6"/>
-  </g>
-  
-  <!-- Favicon Gradient -->
+  <!--
+    MR Firm — Favicon (32x32)
+    Dark branded background + ascending bar chart
+    Bar positions: bottom at y=22, proportionally matching icon-only.svg layout
+  -->
+
   <defs>
-    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c1a0a;stop-opacity:1" />
     </linearGradient>
   </defs>
+
+  <!-- Background: dark rounded square -->
+  <rect width="32" height="32" rx="6" fill="url(#bgGrad)"/>
+
+  <!--
+    Bars: same proportional layout as icon-only.svg
+    Total bar area: x=6 to x=26 (7px margins each side, 20px wide)
+    5px wide bars, 1.5px gap = 5+1.5+5+1.5+5 = 18px, centered: start x=7
+    Bar bottoms at y=23 (9px from bottom)
+    Heights: 8, 13, 18 — ascending
+  -->
+
+  <!-- Bar 1 (shortest): y=15, h=8 -->
+  <rect x="7"    y="15" width="5" height="8"  rx="1.2" fill="white" opacity="0.65"/>
+
+  <!-- Bar 2 (medium): y=10, h=13 -->
+  <rect x="13.5" y="10" width="5" height="13" rx="1.2" fill="white" opacity="0.82"/>
+
+  <!-- Bar 3 (tallest): y=5, h=18 -->
+  <rect x="20"   y="5"  width="5" height="18" rx="1.2" fill="white"/>
+
+  <!--
+    Trend line — top-centers of bars:
+    Bar 1: (9.5, 15)
+    Bar 2: (16,  10)
+    Bar 3: (22.5, 5)
+  -->
+  <polyline
+    points="9.5,15 16,10 22.5,5"
+    stroke="#E6A775"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- Trend dots -->
+  <circle cx="9.5"  cy="15" r="1.4" fill="#E6A775"/>
+  <circle cx="16"   cy="10" r="1.4" fill="#E6A775"/>
+  <circle cx="22.5" cy="5"  r="1.4" fill="#E6A775"/>
+
+  <!-- Baseline -->
+  <line x1="5" y1="23" x2="27" y2="23" stroke="#E6A775" stroke-width="0.75" stroke-linecap="round" opacity="0.4"/>
 </svg>

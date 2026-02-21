@@ -155,9 +155,23 @@ body {
         margin-bottom: 1.5rem;
     }
 
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+        min-height: 46px;
+        min-width: 120px;
+    }
+
     .btn-large {
-        padding: 0.875rem 1.5rem;
-        font-size: 1rem;
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
+        min-height: 56px;
+    }
+
+    .btn-small {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.85rem;
+        min-height: 40px;
     }
 
     .card {
@@ -222,14 +236,15 @@ body {
 
     .btn {
         padding: 0.625rem 1.25rem;
-        font-size: 0.9rem;
-        min-height: 44px;
+        font-size: 0.875rem;
+        min-height: 42px;
+        min-width: 100px;
     }
 
     .btn-large {
         padding: 0.75rem 1.5rem;
         font-size: 0.95rem;
-        min-height: 48px;
+        min-height: 46px;
     }
 
     .btn-small {
@@ -295,7 +310,8 @@ body {
 
     .hero {
         min-height: 60vh;
-        padding: 1.5rem 0;
+        padding: 80px 0 3rem;
+        /* Padding-top accounts for fixed navbar */
     }
 
     .hero-title {
@@ -312,13 +328,15 @@ body {
     .btn {
         width: 100%;
         justify-content: center;
-        padding: 0.75rem 1.25rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1.25rem;
+        font-size: 0.875rem;
+        min-height: 42px;
     }
 
     .btn-large {
-        padding: 0.875rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.925rem;
+        min-height: 46px;
     }
 
     .card {
@@ -640,7 +658,12 @@ body {
 @media (max-width: 360px) {
     .container {
         padding: 0 1rem !important;
-        /* Increased for safety */
+    }
+
+    .hero {
+        padding-top: 100px !important;
+        margin-top: 0 !important;
+        min-height: auto;
     }
 
     .hero-title {
@@ -658,26 +681,23 @@ body {
         flex-direction: column !important;
         gap: 1rem !important;
         padding: 0 1.25rem !important;
-        /* Ample side padding to prevent touching edges */
         width: 100% !important;
     }
 
     .btn {
         width: 100% !important;
-        font-size: 0.85rem;
-        padding: 0.625rem 0.75rem;
+        font-size: 0.85rem !important;
+        padding: 0.6rem 0.75rem !important;
         min-width: auto !important;
-        min-height: 40px;
+        min-height: 38px !important;
     }
 
-    .logo-text strong,
-    .logo-text span {
+    /* Scale down logo for mobile using font-size — img is 1em so it scales together with text */
+    .logo,
+    .footer-logo .logo,
+    .sidebar-logo .logo {
         font-size: 16px !important;
-    }
-
-    .logo img {
-        width: 32px !important;
-        height: 32px !important;
+        gap: 6px !important;
     }
 
     .feature-card {
@@ -691,6 +711,7 @@ body {
         gap: 1rem !important;
     }
 }
+
 
 /* Global Responsive Fixes */
 img,

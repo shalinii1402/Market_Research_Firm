@@ -67,4 +67,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
+
+  // Highlight Active Link
+  function highlightActiveLink() {
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split("/").filter(Boolean).pop() || "index.html";
+
+    document.querySelectorAll(".mobile-nav-link").forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      const linkName = href.split("/").filter(Boolean).pop();
+
+      if (linkName === pageName ||
+        (pageName === "index.html" && (href === "index.html" || href === "/")) ||
+        (currentPath.includes("dashboard") && href.includes("dashboard"))) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove("active");
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  highlightActiveLink();
 });

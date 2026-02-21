@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/icon-only.svg">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/logo/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/images/logo/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/images/logo/favicon.svg">
 </head>
 
 <body>
@@ -86,20 +88,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <div class="user-profile">
-                    <div class="user-avatar">
-                        <img src="../assets/images/dashboard/user-avatar.jpg" alt="User Avatar" class="avatar"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="avatar-fallback"
-                            style="display:none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-light); align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="user-info">
-                        <div class="user-name">John Doe</div>
-                        <div class="user-email">john@marketresearchfirm.com</div>
-                    </div>
-                </div>
+
 
                 <a href="../index.html" class="sidebar-link logout-link" style="color: #ef4444; margin-top: 0.5rem;">
                     <span class="sidebar-icon"><i class="fas fa-sign-out-alt"></i></span>
@@ -114,11 +103,27 @@
 
         <!-- Mobile Header -->
         <div class="mobile-dashboard-header">
-            <button class="mobile-hamburger" id="mobileDashboardToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="header-left">
+                <button class="mobile-hamburger" id="mobileDashboardToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="header-right">
+                <span class="header-user-name">John Doe</span>
+                <div class="header-user-avatar">
+                    <img src="../assets/images/dashboard/user-avatar.jpg" alt="" class="avatar-sm"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="avatar-sm-fallback" style="display:none;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Main Content -->
@@ -435,15 +440,27 @@
             const mobileDashboardToggle = document.getElementById('mobileDashboardToggle');
 
             if (mobileDashboardToggle) {
-                mobileDashboardToggle.addEventListener('click', function () {
-                    sidebar.classList.add('active');
-                    mobileMenuOverlay.classList.add('active');
+                mobileDashboardToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    sidebar.classList.toggle('active');
+                    mobileMenuOverlay.classList.toggle('active');
                 });
             }
 
             mobileMenuOverlay.addEventListener('click', function () {
                 sidebar.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1024 &&
+                    sidebar.classList.contains('active') &&
+                    !sidebar.contains(e.target) &&
+                    !mobileDashboardToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                }
             });
         });
     </script>
