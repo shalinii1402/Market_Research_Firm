@@ -142,7 +142,8 @@ body {
 
     .hero {
         min-height: 80vh;
-        padding: 2rem 0;
+        padding: 100px 0 4rem;
+        /* Padding-top accounts for fixed navbar on tablet */
     }
 
     .hero-title {
